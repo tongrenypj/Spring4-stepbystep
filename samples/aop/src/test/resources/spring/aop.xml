@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+			http://www.springframework.org/schema/beans/spring-beans-3.1.xsd 
+            http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+            http://www.springframework.org/schema/aop
+			http://www.springframework.org/schema/aop/spring-aop-3.1.xsd"
+       default-lazy-init="true">
+    <!--<aop:aspectj-autoproxy proxy-target-class="true"/>-->
+    <bean id="helloService" class="com.stepbystep.spring4.samples.aop.HelloServiceImpl"/>
+    <bean id="helloProvider" class="com.stepbystep.spring4.samples.aop.HelloProvider"/>
+    <bean id="aopLog" class="com.stepbystep.spring4.samples.aop.aspect.AopLog"/>
+    <aop:config proxy-target-class="true" expose-proxy="true">
+        <aop:aspect id="log" ref="aopLog">
+            <aop:pointcut id="allAddMethod"
+                          expression="execution( * com.stepbystep.spring4.samples.aop.*.*(..))"/>
+            <aop:around method="around" pointcut-ref="allAddMethod"/>
+        </aop:aspect>
+    </aop:config>
+</beans>

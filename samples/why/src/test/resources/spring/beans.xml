@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd"
+	   default-lazy-init="true">
+	<bean name="engineerAny" class="com.stepbystep.spring.samples.whydemo.EngineerAny">
+		<constructor-arg name="name" value="配置攻城狮"></constructor-arg>
+		<constructor-arg name="trafficType" ref="trafficType"></constructor-arg>
+	</bean>
+	<bean name="subwayType" class="com.stepbystep.spring.samples.whydemo.SubwayType"></bean>
+	<bean name="busType" class="com.stepbystep.spring.samples.whydemo.BusType"></bean>
+	<bean name="trafficType" class="com.stepbystep.spring.samples.whydemo.TrafficTypeImpl">
+		<constructor-arg name="trafficType" value="腾云驾雾"></constructor-arg>
+	</bean>
+</beans>
+

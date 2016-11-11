@@ -1,0 +1,4 @@
+spring:
+  datasource:
+    initialize: true
+    data-source: "classpath:/config/populateDB.sql"

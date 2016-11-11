@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd"
+	   default-lazy-init="true">
+
+	<beans>
+		<bean name="helloContext" class="com.stepbystep.spring4.samples.context.HelloContext">
+			<property name="name" value="Spring"></property>
+			<property name="age" value="8"></property>
+		</bean>
+		<bean class="com.stepbystep.spring4.samples.beans.lifecycle.BeanFactoryPostProcessorAdapter"></bean>
+		<bean class="com.stepbystep.spring4.samples.beans.lifecycle.BeanPostProcessorAdapter"></bean>
+	</beans>
+	<beans profile="framework">
+		<bean name="helloContext2" class="com.stepbystep.spring4.samples.context.HelloContext">
+			<property name="name" value="Spring Framework"></property>
+			<property name="age" value="${age}"></property>
+		</bean>
+	</beans>
+	<beans profile="boot">
+		<bean name="helloContext3" class="com.stepbystep.spring4.samples.context.HelloContext">
+		</bean>
+	</beans>
+</beans>
+

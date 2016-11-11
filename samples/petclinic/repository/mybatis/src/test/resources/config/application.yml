@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    initialize: true
+    schema: "classpath:/db/hsqldb/initDB.sql"
+#        - "classpath:/db/hsqldb/populateDB.sql"
+
+logging:
+#  pattern:
+#    console:
+  level:
+    root: INFO
+    org.mybatis: TRACE
+

@@ -1,0 +1,9 @@
+<h3>list.vm showcase</h3>
+<h4>hello 世界！</h4>
+<p>
+
+#foreach( $item in $list)
+    <li>${item.name}</li>
+#end
+
+</p>

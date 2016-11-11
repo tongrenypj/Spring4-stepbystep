@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:util="http://www.springframework.org/schema/util"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"
+	   default-lazy-init="true">
+	<context:property-placeholder location="classpath:config/placeholder.properties"/>
+	<context:property-override location="classpath:/config/override.properties"/>
+	<context:annotation-config></context:annotation-config>
+	<context:component-scan base-package="com.stepbystep.spring4.samples.context"></context:component-scan>
+
+    <bean name="placeHolderProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name="locations">
+            <list>
+                <value>classpath:config/placeholder.properties</value>
+            </list>
+        </property>
+    </bean>
+</beans>
+

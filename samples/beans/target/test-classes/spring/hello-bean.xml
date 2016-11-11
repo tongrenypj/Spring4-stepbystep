@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:p="http://www.springframework.org/schema/p"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:util="http://www.springframework.org/schema/util"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"
+	   default-lazy-init="true">
+
+	<bean name="helloBean" class="com.stepbystep.spring4.samples.beans.HelloBean"
+		  init-method="initMethod" destroy-method="destroyMethod">
+		<property name="name" value="Spring"></property>
+		<property name="age" value="0"></property>
+	</bean>
+
+	<bean name="helloBean2" class="com.stepbystep.spring4.samples.beans.HelloBean"
+		  p:name="test" p:age="2"/>
+	<bean name="helloBean3" class="com.stepbystep.spring4.samples.beans.HelloBean" p:age="3"/>
+
+	<bean name="helloBean4" class="com.stepbystep.spring4.samples.beans.HelloBean" p:name="${name}" p:age="4"/>
+
+	<!--<bean class="com.stepbystep.spring4.samples.beans.lifecycle.BeanFactoryPostProcessorAdapter"></bean>-->
+	<!--<bean class="com.stepbystep.spring4.samples.beans.lifecycle.BeanPostProcessorAdapter"></bean>-->
+
+	<util:list id="list">
+		<value>java</value>
+		<value>bean</value>
+	</util:list>
+
+</beans>
+

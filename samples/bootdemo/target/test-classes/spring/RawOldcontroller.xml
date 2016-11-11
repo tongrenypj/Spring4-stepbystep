@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+       default-lazy-init="true">
+
+    <!--<context:component-scan base-package="com.stepbystep.spring.samples.mvcdemo.web.**"></context:component-scan>-->
+    <bean name="/rawOld" class="com.stepbystep.spring.samples.mvcdemo.web.RawOldController"/>
+    <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
+    <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping"/>
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/>
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"/>
+    <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/>
+
+    <!-- ViewResolver
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+    </bean>
+    -->
+    <!--<bean id="velocityConfig" class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">-->
+        <!--&lt;!&ndash;<property name="resourceLoaderPath" value="/WEB-INF/velocity/"/>&ndash;&gt;-->
+        <!--<property name="resourceLoader" value="/WEB-INF/vm/"></property>-->
+    <!--</bean>-->
+
+    <!--<bean class="org.springframework.web.servlet.view.velocity.VelocityViewResolver">-->
+        <!--&lt;!&ndash;<property name="viewClass" value="org.springframework.web.servlet.view.velocity.VelocityView"/>&ndash;&gt;-->
+        <!--<property name="cache" value="true"/>-->
+        <!--<property name="prefix" value="/WEB-INF/vm/"/>-->
+        <!--<property name="suffix" value=".vm"/>-->
+    <!--</bean>-->
+    <!--<bean class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">-->
+        <!--<property name="viewClass" value="org.springframework.web.servlet.view.freemarker.FreeMarkerView"/>-->
+        <!--<property name="prefix" value="/WEB-INF/ftl/"/>-->
+        <!--<property name="suffix" value=".ftl"/>-->
+    <!--</bean>-->
+</beans>
+

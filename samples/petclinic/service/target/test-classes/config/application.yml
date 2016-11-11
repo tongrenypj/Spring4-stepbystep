@@ -1,0 +1,11 @@
+#spring:
+#  datasource:
+#    initialize: true
+#    data-source: "classpath:/config/initDB.sql"
+spring:
+  jpa:
+    database: HSQL
+    show-sql: true
+    generate-ddl: false
+
+
